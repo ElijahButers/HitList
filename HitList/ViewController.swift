@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var names: [String] = []
+    var people = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
