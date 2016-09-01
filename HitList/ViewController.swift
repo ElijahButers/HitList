@@ -29,6 +29,21 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     @IBAction func addName(_ sender: AnyObject) {
     }
+    
+    // MARK: - UITableView
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        cell?.textLabel?.text = names[indexPath.row]
+        
+        return cell!
+    }
 
 }
 
