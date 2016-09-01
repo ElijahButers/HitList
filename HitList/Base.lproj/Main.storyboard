@@ -31,7 +31,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fXH-iN-kFo" secondAttribute="trailing" constant="-16" id="isM-gR-aGT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R0X-54-hVo"/>
+                    <navigationItem key="navigationItem" id="R0X-54-hVo">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="G2a-vm-h1k"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
