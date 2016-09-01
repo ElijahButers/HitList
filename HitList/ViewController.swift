@@ -26,9 +26,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func addName(_ sender: AnyObject) {
-    }
     
     // MARK: - UITableView
     
@@ -40,10 +37,31 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = names[indexPath.row]
+        cell!.textLabel!.text = names[indexPath.row]
         
         return cell!
     }
 
+    // MARK: - Actions
+    
+    @IBAction func addName(_ sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Add name", message: "Add a new name", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction) -> Void in
+            let textField = alert.textFields!.first
+            self.names.append(textField!.text!)
+            self.tableView.reloadData()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action: UIAlertAction) -> Void in
+            }
+            alert.addTextField(configurationHandler: { (textField: UITextField) -> Void in
+                
+                alert.addAction(saveAction)
+                alert.addAction(cancelAction)
+            
+                self.present(alert, animated: true, completion: nil)
+    })
+    
+    }
 }
 
