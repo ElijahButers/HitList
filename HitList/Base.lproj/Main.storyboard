@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,18 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fXH-iN-kFo">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fXH-iN-kFo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Lyw-bd-z4y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fXH-iN-kFo" secondAttribute="bottom" id="PCS-mA-FPi"/>
+                            <constraint firstItem="fXH-iN-kFo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="fdU-9d-D90"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fXH-iN-kFo" secondAttribute="trailing" constant="-16" id="isM-gR-aGT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R0X-54-hVo"/>
                 </viewController>
