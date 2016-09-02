@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "Person")
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Person")
         
         do {
             let results = try managedContext.fetch(fetchRequest)
@@ -99,4 +99,3 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     }
 }
-
