@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let alert = UIAlertController(title: "Add name", message: "Add a new name", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction) -> Void in
             let textField = alert.textFields!.first
-            self.names.append(textField!.text!)
+            self.saveName(textField!.text!)
             self.tableView.reloadData()
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action: UIAlertAction) -> Void in
