@@ -43,6 +43,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell!
     }
+    
+    func saveName(_ name: String) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
+        let person = NSManagedObject(entity: entity!, insertInto: managedContext)
+        person.setValue(name, forKey: "name")
+        
+        do {
+            try managedContext.save()
+            people.append(person)
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
 
     // MARK: - Actions
     
